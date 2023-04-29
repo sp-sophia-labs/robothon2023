@@ -1,0 +1,11 @@
+{
+    "name": "Current pose",
+    "execution" : "step_by_step",
+    "sequence": [
+        {
+            "name": "current pose",
+            "type": "get_current_pose",
+            "frame": "_center_frame"
+        }
+    ]
+}

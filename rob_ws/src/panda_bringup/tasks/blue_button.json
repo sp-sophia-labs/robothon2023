@@ -1,0 +1,47 @@
+{
+    "name": "blue button",
+    "execution" : "non_stop",
+    "sequence": [
+        {
+            "name": "grasp",
+            "type": "grasp",
+            "speed": "0.9",
+            "width": "0.0001",
+            "force": "70",
+            "ei": "0.05",
+            "eo": "0.05"
+        },
+        {
+            "name": "move to button",
+            "type": "move",
+            "x": -0.05540805679368796,
+            "y": -0.025795260827633948,
+            "z": 0.08878179613033867,
+            "rx": -0.35272485085862226,
+            "ry": 0.9357212875050781,
+            "rz": -0.002027901776283151,
+            "rw": 0.0025960182948465238,
+            "speed": 0.9,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        { 
+            "name": "move until z force feedback",
+            "type": "move_axis_until_force",
+            "frame": "_link0",
+            "locked_joint_frame": "_link8",
+            "mov_limit": 0.002,
+            "axis": "z",
+            "force_threshold": 2,
+            "force_spike": true,
+            "speed": 0.01,
+            "acceleration": 0.01,
+            "planning_time": 20
+        },
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        }
+    ]
+}
+

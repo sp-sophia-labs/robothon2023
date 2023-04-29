@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find panda_sim_bringup)/config/default.rviz"/>
+</launch>

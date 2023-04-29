@@ -1,0 +1,19 @@
+{
+    "name": "Sophia",
+    "elements": [
+        {
+            "name": "init_scene",
+            "type": "init"
+        },
+        {
+            "name": "panda_furniture",
+            "type": "static_box",
+            "x": "0.345",
+            "y": "0.0",
+            "z": "-0.50",
+            "size_x": "1.00",
+            "size_y": "1.00",
+            "size_z": "1.00"
+        }
+    ]
+}

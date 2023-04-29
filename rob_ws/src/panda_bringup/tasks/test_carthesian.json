@@ -1,0 +1,44 @@
+{
+    "name": "Test Carthesian Trajectory",
+    "execution" : "step_by_step",
+    "sequence": [
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        },
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.5,
+            "acceleration": 0.1
+        },
+        {
+            "name": "move to test point",
+            "type": "move",
+            "x": 0.453,
+            "y": 0.053,
+            "z": 0.35,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_link0"
+        },
+        {
+            "name": "try to open the door",
+            "type": "door",
+            "x": 0.30,
+            "y": -0.08,
+            "z": 0.15,
+            "frame": "_link0",
+            "step": 10
+        }
+    ]
+}

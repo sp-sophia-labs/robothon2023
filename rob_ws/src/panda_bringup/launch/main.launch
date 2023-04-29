@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+    <arg name="enable_vision" default="false" />
+    <arg name="launch_task" default="false" />
+
+    <!-- panda/fr3  -->
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+        <arg name="time" value="0"/>
+        <arg name="pkg" value="panda_bringup"/>
+        <arg name="file" value="panda.launch"/>
+    </include>
+
+    <!-- frame processing/publishing -->
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+        <arg name="time" value="1"/>
+        <arg name="pkg" value="frame_processing"/>
+        <arg name="file" value="frame_processing_server.launch"/>
+    </include>
+
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+        <arg name="time" value="2"/>
+        <arg name="pkg" value="frame_processing"/>
+        <arg name="file" value="frame_publisher.launch"/>
+    </include>
+
+    <!-- execute task 
+    <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+        <arg name="time" value="3"/>
+        <arg name="pkg" value="panda_bringup"/>
+        <arg name="file" value="execute_tasks.launch"/>
+    </include>
+    -->
+
+</launch>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+    <param name="robot_id" value="fr3"/> <!-- choose your move group. Possible values: [panda_arm, fr3_arm] -->
+    <param name="scene" value="default.json"/>
+    <param name="tasks" value="get_current_pose.json"/>
+    <param name="enable_vision" value="true"/>
+    
+    <node pkg="panda_task_executor" type="execute_tasks.py" name="execute_tasks" output="screen" clear_params="true"/>
+    
+</launch>

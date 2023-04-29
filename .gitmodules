@@ -1,0 +1,77 @@
+[submodule "rob_ws/src/franka_ros_interface"]
+	path = rob_ws/src/franka_ros_interface
+	url = https://github.com/sp-sophia-labs/franka_ros_interface.git
+	branch = master
+
+[submodule "rob_ws/src/timed_roslaunch"]
+	path = rob_ws/src/timed_roslaunch
+	url = https://github.com/MoriKen254/timed_roslaunch.git
+	branch = melodic-devel
+
+[submodule "rob_ws/src/moveit"]
+	path = rob_ws/src/moveit
+	url = https://github.com/ros-planning/moveit.git
+	version = master
+
+[submodule "rob_ws/src/moveit_msgs"]
+	path = rob_ws/src/moveit_msgs
+	url = https://github.com/ros-planning/moveit_msgs.git
+	branch = master
+
+[submodule "rob_ws/src/moveit_resources"]
+	path = rob_ws/src/moveit_resources
+	url = https://github.com/sp-sophia-labs/moveit_resources.git
+	branch = master
+
+[submodule "rob_ws/src/moveit_visual_tools"]
+	path = rob_ws/src/moveit_visual_tools
+	url = https://github.com/ros-planning/moveit_visual_tools.git
+	branch = master
+
+[submodule "rob_ws/src/geometric_shapes"]
+	path = rob_ws/src/geometric_shapes
+	url = https://github.com/ros-planning/geometric_shapes.git
+	branch = noetic-devel
+
+[submodule "rob_ws/src/rviz_visual_tools"]
+	path = rob_ws/src/rviz_visual_tools
+	url = https://github.com/PickNikRobotics/rviz_visual_tools
+	branch = master
+
+[submodule "rob_ws/src/image_processing"]
+	path = rob_ws/src/image_processing
+	url = https://forge.labs.accenture.com/labs/rd/sp/sop/rb/tools/panda/image_processing.git
+	branch = dev
+
+[submodule "rob_ws/src/panda_moveit_config"]
+	path = rob_ws/src/panda_moveit_config
+	url = https://github.com/sp-sophia-labs/panda_moveit_config.git
+	branch = ewaste
+
+[submodule "rob_ws/src/panda_task_executor"]
+	path = rob_ws/src/panda_task_executor
+	url = https://forge.labs.accenture.com/labs/rd/sp/sop/rb/tools/panda/panda_task_executor.git
+	branch = dev
+
+[submodule "rob_ws/src/frame_processing"]
+	path = rob_ws/src/frame_processing
+	url = https://forge.labs.accenture.com/labs/rd/sp/sop/rb/tools/panda/frame_processing.git
+	branch = main
+
+[submodule "rob_ws/src/franka_ros"]
+	path = rob_ws/src/franka_ros
+	url = https://github.com/sp-sophia-labs/franka_ros.git
+	branch = noetic-sophia
+
+[submodule "rob_ws/src/libfranka"]
+	path = rob_ws/src/libfranka
+	url = https://github.com/frankaemika/libfranka
+	branch = fr3-develop
+
+# How to un-submodule a Git submodule :
+# git rm --cached submodule_path # delete reference to submodule HEAD (no trailing slash)
+# git rm .gitmodules             # if you have more than one submodules,
+#                                # you need to edit this file instead of deleting!
+# rm -rf submodule_path/.git     # make sure you have backup!!
+# git add submodule_path         # will add files instead of commit reference
+# git commit -m "remove submodule"

@@ -1,0 +1,76 @@
+{
+    "name": "Red button",
+    "execution" : "non_stop",
+    "sequence": [
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.9,
+            "acceleration": 0.1
+        },
+        {
+            "name": "grasp",
+            "type": "grasp",
+            "speed": "0.9",
+            "width": "0.0001",
+            "force": "70",
+            "ei": "0.05",
+            "eo": "0.05"
+        },
+        {
+            "name": "move to button",
+            "type": "move",
+            "x": -0.05417479965773264,
+            "y": -0.0041663283738963,
+            "z": 0.08936050981025356,
+            "rx": -0.36188707970566936,
+            "ry": 0.9322173347575483,
+            "rz": 0.0025906557418363197,
+            "rw": 0.001367780122315506,
+            "speed": 0.9,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        { 
+            "name": "move until z force feedback",
+            "type": "move_axis_until_force",
+            "frame": "_link0",
+            "locked_joint_frame": "_link8",
+            "mov_limit": 0.002,
+            "axis": "z",
+            "force_threshold": 2,
+            "force_spike": true,
+            "speed": 0.01,
+            "acceleration": 0.01,
+            "planning_time": 20
+        },
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        },
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.9,
+            "acceleration": 0.1
+        }
+    ]
+}

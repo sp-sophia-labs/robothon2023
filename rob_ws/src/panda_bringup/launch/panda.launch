@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Panda ip : 10.112.33.223 -->
+  <!-- Fr3 ip   : 10.112.33.223 -->
+  <arg name="robot_ip" default="10.112.33.222" />
+  <arg name="robot" default="fr3" doc="choose your robot. Possible values: [panda, fr3]"/>
+  
+  <arg name="load_gripper" default="true" />
+  <arg name="load_camera" default="true"/>
+  <arg name="debug" default="false" />
+  <arg name="start_moveit" default="false"/>
+  <arg name="load_demo_planning_scene" default="false"/>
+  <arg name="force_neutral_pose" default="true"/> <!-- Use a separate script to send robot to the neutral pose in the beginning of simulation -->
+  
+  <arg name="arm_id" default="$(arg robot)" />
+  <arg name="static" default="true"/><!-- This argument fixes the robot statically to the world -->
+  <arg name="load_gazebo" default="false"/><!-- This argument dictates whether gazebo should be launched in this file -->
+
+  <!-- This part solves "No controller found issue" -->
+  <include file="$(find franka_control)/launch/franka_control.launch" pass_all_args="true"/>
+  <rosparam command="load" file="$(find franka_control)/config/default_controllers.yaml" subst_value="true" /> 
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="position_joint_trajectory_controller"/> 
+
+  <!-- Launch auto-error-recovery node -->
+  <node pkg="panda_task_executor" type="error_recovery.py" name="error_recovery_node" output="screen"/>
+
+	<include file="$(find panda_moveit_config)/launch/demo.launch">
+    <arg name="arm_id" value="$(arg robot)" />
+	  <arg name="load_gripper" value="$(arg load_gripper)" />
+    <arg name="moveit_controller_manager" value="ros_control" />
+    <arg name="use_rviz" value="false" />
+    <arg name="load_robot_description" value="false"/>
+	</include>
+
+  <!-- create a tf with base frame as 'base' (to match aml_robot) -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_link0" args="0 0 0 0 0 0 1 world $(arg robot)_link0 100" />
+
+  <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find panda_bringup)/config/panda.rviz">
+    <rosparam command="load" file="$(find panda_moveit_config)/config/kinematics.yaml"/>
+  </node>
+</launch>
+

@@ -1,0 +1,31 @@
+{
+    "name": "Test Carthesian Trajectory",
+    "execution" : "step_by_step",
+    "sequence": [
+        {
+            "name": "open_gripper max",
+            "type": "gripper",
+            "speed": "0.1",
+            "width": "0.05"
+        },
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.5,
+            "acceleration": 0.1
+        },
+        {
+            "name": "calibration",
+            "type": "calibration"
+        }
+    ]
+}

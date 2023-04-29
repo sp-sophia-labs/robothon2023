@@ -1,0 +1,177 @@
+{
+    "name": "Probe",
+    "execution" : "non_stop",
+    "sequence": [
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.5,
+            "acceleration": 0.1
+        },
+        {
+            "name": "move to grasp probe",
+            "type": "move",
+            "x": 0.1469332562849826,
+            "y": -0.07446272762149009,
+            "z": 0.07458219193593013,
+            "rx": -0.32060717689978335,
+            "ry": 0.909798532715221,
+            "rz": 0.2507080983567156,
+            "rw": 0.08138253748772645,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        }, 
+        {
+            "name": "grasp",
+            "type": "grasp",
+            "speed": "0.01",
+            "width": "0.0001",
+            "force": "70",
+            "ei": "0.05",
+            "eo": "0.05"
+        },
+        {
+            "name": "move out probe",
+            "type": "move",
+            "x": 0.1460021761535956,
+            "y": -0.0960256414804922,
+            "z": 0.0748333644556789,
+            "rx": -0.32056798588060936,
+            "ry": 0.9116783271705509,
+            "rz": 0.24350380251106613,
+            "rw": 0.08236924400895733,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "move before probe",
+            "type": "move",
+            "x": 0.06602086230146553,
+            "y": -0.13587861367787324,
+            "z": 0.5570183591503388,
+            "rx": -0.33534083471203857,
+            "ry": 0.9118391236330698,
+            "rz": -0.22999981116567386,
+            "rw": -0.05653338881106275,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "move to probe in test direct",
+            "type": "move",
+            "x": -0.006449401661165545,
+            "y": 0.03321633006472535,
+            "z": 0.08945764852948124,
+            "rx": 0.7764007695070058,
+            "ry": -0.3195507352440739,
+            "rz": 0.5003120879422599,
+            "rw": -0.2116057356801975,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },   
+        {
+            "name": "Probe search",
+            "type": "probe",
+            "frame": "_link0",
+            "locked_joint_frame": "_link8",
+            "mov_limit": "0.002",
+            "axis": "z",
+            "force_threshold": 3,
+            "force_spike": true,
+            "timeout": 20.0,
+            "speed": 0.001,
+            "acceleration": 0.0005,
+            "planning_time": 10,
+            "priority": 1        
+        },
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        },
+        {
+            "name": "start return",
+            "type": "move",
+            "x": -0.004496909229964902,
+            "y": 0.03210827032235958,
+            "z": 0.15009189110733823,
+            "rx": 0.776846263038363,
+            "ry": -0.31821223792307746,
+            "rz": 0.5005385586211398,
+            "rw": -0.21145213778249963,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "return move before probe",
+            "type": "move",
+            "x": 0.06602086230146553,
+            "y": -0.13587861367787324,
+            "z": 0.5570183591503388,
+            "rx": -0.33534083471203857,
+            "ry": 0.9118391236330698,
+            "rz": -0.22999981116567386,
+            "rw": -0.05653338881106275,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "return move before probe 2",
+            "type": "move",
+            "x": 0.14063130563656,
+            "y": -0.13641468423323544,
+            "z": 0.1852809064916877,
+            "rx": -0.33640834808788495,
+            "ry": 0.9079302234938906,
+            "rz": 0.2353419267149058,
+            "rw": 0.08429893316780568,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "return move out probe",
+            "type": "move",
+            "x": 0.14453750520657208,
+            "y": -0.09228703539936112,
+            "z": 0.07682043274199266,
+            "rx": -0.32356190103319427,
+            "ry": 0.9115127970208985,
+            "rz": 0.24044921511877723,
+            "rw": 0.08146343974868515,
+            "speed": 0.5,
+            "acceleration": 0.1,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "move in line",
+            "type": "move_in_line",
+            "x": "0.14453",
+            "y": "-0.07",
+            "z": "0.0768", 
+            "speed": "0.5",
+            "acceleration": "0.05",
+            "frame": "_center_frame",
+            "locked_joint_frame": "_link8"
+        },
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        }
+    ]
+}
+

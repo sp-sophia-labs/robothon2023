@@ -1,0 +1,7 @@
+future
+numpy
+numpy-quaternion==2020.5.11.13.33.35
+pyparsing==2.4.7
+pyrealsense2
+setuptools
+black

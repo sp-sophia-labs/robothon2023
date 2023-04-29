@@ -1,0 +1,20 @@
+# Project specifics
+
+traced_model.pt
+
+# ROS
+install
+build
+devel
+logs
+.rosinstall*
+.catkin_tools
+
+# VSCode
+.DS_STORE
+.vscode 
+.code-workspace
+
+# Python
+__pycache__
+*.pyc

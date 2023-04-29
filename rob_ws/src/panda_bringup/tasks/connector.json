@@ -1,0 +1,118 @@
+{
+    "name": "Connector",
+    "execution" : "step_by_step",
+    "sequence": [
+        {
+            "name": "init joint before exec",
+            "type": "joint",
+            "joints": [
+                -0.17121823585064147,
+                -0.34352050156883407,
+                0.2470457329870963,
+                -2.1297295871135162,
+                0.08354832564395018,
+                1.796506703440306,
+                0.8274672091845707
+            ],
+            "speed": 0.9,
+            "acceleration": 0.1
+        },
+        {
+            "name": "open_gripper",
+            "type": "gripper",
+            "speed": "0.9",
+            "width": "0.02"
+        },
+        {
+            "name": "move to black",
+            "type": "move",
+            "x": 0.004672830217149662,
+            "y": -0.02787423639292186,
+            "z": 0.08960086897429864,
+            "rx": -0.3780279071978594,
+            "ry": 0.9257920413343935,
+            "rz": -0.0009614224486305614,
+            "rw": -0.0017530682754437871,
+            "speed": 0.9,
+            "acceleration": 0.5,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "grasp",
+            "type": "grasp",
+            "speed": "0.9",
+            "width": "0.0001",
+            "force": "70",
+            "ei": "0.05",
+            "eo": "0.05"
+        },
+        {
+            "name": "move above black",
+            "type": "move",
+            "x": 0.004585777772675562,
+            "y": -0.027718304095155633,
+            "z": 0.1400155961910136,
+            "rx": -0.37907498432356684,
+            "ry": 0.9253644335644222,
+            "rz": -0.001223522558777713,
+            "rw": -0.0011508026032280765,
+            "speed": 0.9,
+            "acceleration": 0.5,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "move above red",
+            "type": "move",
+            "x": 0.005927310856717716,
+            "y": -0.0016743785426343027,
+            "z": 0.10937185401256427,
+            "rx": -0.3788490657880444,
+            "ry": 0.9254561022364659,
+            "rz": -0.0020544875119371847,
+            "rw": -0.00040898151216369263,
+            "speed": 0.9,
+            "acceleration": 0.5,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "Spiral Search",
+            "type": "spiral_search",
+            "frame": "_link0",
+            "locked_joint_frame": "_link8",
+            "mov_limit": "0.02",
+            "axis": "z",
+            "force_threshold": 3,
+            "force_spike": true,
+            "timeout": 20.0,
+            "speed": 0.001,
+            "acceleration": 0.0005,
+            "planning_time": 10,
+            "priority": 1        
+        },
+        {
+            "name": "release",
+            "type": "gripper",
+            "speed": "0.9",
+            "width": "0.05"
+        },
+        {
+            "name": "move back red",
+            "type": "move",
+            "x": 0.06591955054418788,
+            "y": 0.025827275142437656,
+            "z": 0.35006654193362513,
+            "rx": -0.3776582836101677,
+            "ry": 0.9259389266937864,
+            "rz": -0.0025333685100220465,
+            "rw": -0.002215151862412777,
+            "speed": 0.9,
+            "acceleration": 0.5,
+            "frame": "_center_frame"
+        },
+        {
+            "name": "clear constraints before exec",
+            "type": "remove_constraints"
+        }
+    ]
+}
+
